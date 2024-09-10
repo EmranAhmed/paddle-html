@@ -9,7 +9,7 @@ const settings = {
 
   frameTarget: 'checkout-container',
   frameInitialHeight: '450',
-  frameStyle: 'width: 100%; min-width: 312px; background-color: transparent; border: 1ps solid red;',
+  frameStyle: 'width: 100%; min-width: 312px; background-color: transparent; border: 1px solid red;',
   // successUrl: 'http://sites.local/paddle-html/thank-you.php'// URL to redirect to on checkout completion. Must start with http:// or https://.
 }
 
@@ -92,13 +92,21 @@ Paddle.Initialize({
 
 const transactionId = "txn_01j64qkkcsvefjwj74w1zxqw5p";
 
-function openCheckout () {
+function openCheckout (transactionId) {
+
+  if( !transactionId ){
+    return;
+  }
+
   Paddle.Checkout.open({
     // items: itemsList2,
-     transactionId: transactionId,
+     transactionId,
 
     customer: customerInfo,
-    settings: {...settings, successUrl: `http://sites.local/paddle-html/thank-you.php?_ptxn=${transactionId}&re=`},
+    settings: {
+       ...settings,
+      successUrl: `https://storepress.dev/paddle-html/thank-you.php?_ptxn=${transactionId}&re=`
+    },
     customData: {
       'utm_medium': 'social',
       'utm_source': 'linkedin',
@@ -111,5 +119,6 @@ function openCheckout () {
 document.getElementById('pay-button').addEventListener('click', (event) => {
   event.preventDefault()
 
-  openCheckout()
+  const transactionId = document.getElementById('transactionId').value
+  openCheckout(transactionId)
 })

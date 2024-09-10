@@ -11,7 +11,7 @@
 	<h1>Sign up now</h1>
 	<div class="grid">
 		<div>
-			<h3><code>Paddle.Checkout.open()</code></h3>
+			<input size="100" autocomplete="off" type="text" id="transactionId" placeholder="Transaction Id" />
 			<a id="pay-button" href="#"><b>Pay Now</b></a>
 		</div>
 	</div>
@@ -31,5 +31,8 @@
 
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script src="script.js?<?php echo rand(29, 988798989) ?>"></script>
+<script>
+
+</script>
 </body>
 </html>
