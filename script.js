@@ -1,5 +1,5 @@
 const settings = {
-  allowedPaymentMethods: ['alipay', 'apple_pay', 'bancontact', 'card', 'google_pay', 'ideal', 'paypal'],
+  // allowedPaymentMethods: ['alipay', 'apple_pay', 'bancontact', 'card', 'google_pay', 'ideal', 'paypal'],
   displayMode: 'overlay', // inline | overlay
   theme: 'light',
   locale: 'en', // Language for the checkout.
