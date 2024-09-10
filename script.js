@@ -108,10 +108,7 @@ function openCheckout (transactionId) {
       successUrl: `https://storepress.dev/paddle-html/thank-you.php?_ptxn=${transactionId}&re=`
     },
     customData: {
-      'utm_medium': 'social',
-      'utm_source': 'linkedin',
-      'utm_content': 'launch-video',
-      'integration_id': 'AA-123',
+      'wc_order': '1234',
     },
   })
 }
